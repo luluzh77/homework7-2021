@@ -35,7 +35,7 @@ document.querySelector("#skip").addEventListener("click", function() {
 	console.log("Original time is " + video.currentTime);
 	if (video.currentTime < video.duration - 15) {
 		video.currentTime += 15
-		console.log("Current Time: " + video.currentTime)
+		console.log("Current time is: " + video.currentTime)
 	}
 
 	else {
