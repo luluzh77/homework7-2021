@@ -10,6 +10,7 @@ document.querySelector("#play").addEventListener("click", function() {
 	console.log("Play Video");
 	video.play();
 	console.log(video.currentTime)
+	document.querySelector("#volume").innerHTML=video.volume *100 +"%"
 });
 
 document.querySelector("#pause").addEventListener("click", function() {
@@ -18,29 +19,30 @@ document.querySelector("#pause").addEventListener("click", function() {
 });
 
 document.querySelector("#slower").addEventListener("click", function() {
-	console.log("Old video speed is " + video.playbackRate);
+	console.log("Old speed is " + video.playbackRate);
 	video.playbackRate *= 0.95;
-	console.log("New video speed is " + video.playbackRate);
+	console.log("New speed is " + video.playbackRate);
 
 });
 
 document.querySelector("#faster").addEventListener("click", function() {
-	console.log("Old video speed is " + video.playbackRate);
+	console.log("Old speed is " + video.playbackRate);
 	video.playbackRate /= 0.95;
-	console.log("New video speed is " + video.playbackRate);
+	console.log("New speed is " + video.playbackRate);
 
 });
 
 document.querySelector("#skip").addEventListener("click", function() {
-	console.log("Original time is " + video.currentTime);
+	console.log("Original location " + video.currentTime);
 	if (video.currentTime < video.duration - 15) {
 		video.currentTime += 15
-		console.log("Current time is: " + video.currentTime)
+		console.log("New location " + video.currentTime)
 	}
 
 	else {
 		video.currentTime = 0
-		console.log("Start from the begining: " + video.currentTime)
+		console.log("Going back to begining")
+		console.log("New location " + video.currentTime)
 	}
 });
 
@@ -57,8 +59,8 @@ document.querySelector("#mute").addEventListener("click", function() {
 });
 
 document.querySelector("#slider").addEventListener("click", function() {
-	console.log(this.value)
-	video.volume = this.value / 100;
+	// console.log(this.value)
+	console.log(video.volume = this.value / 100)
 	document.querySelector("#volume").innerHTML = video.volume * 100 + "%" ;
 });
 
